@@ -56,7 +56,7 @@ namespace PBL6.View
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(50, 129);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(536, 358);
+            this.groupBox1.Size = new System.Drawing.Size(476, 358);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lich su ma hoa";
@@ -68,15 +68,15 @@ namespace PBL6.View
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(536, 286);
+            this.dataGridView1.Size = new System.Drawing.Size(456, 286);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Location = new System.Drawing.Point(619, 129);
+            this.groupBox2.Location = new System.Drawing.Point(579, 129);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(544, 358);
+            this.groupBox2.Size = new System.Drawing.Size(470, 358);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lich su giai ma";
@@ -84,11 +84,11 @@ namespace PBL6.View
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 37);
+            this.dataGridView2.Location = new System.Drawing.Point(26, 37);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(544, 286);
+            this.dataGridView2.Size = new System.Drawing.Size(412, 286);
             this.dataGridView2.TabIndex = 0;
             // 
             // button1
@@ -102,7 +102,7 @@ namespace PBL6.View
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(891, 86);
+            this.button2.Location = new System.Drawing.Point(742, 86);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 37);
             this.button2.TabIndex = 4;
@@ -113,7 +113,7 @@ namespace PBL6.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1206, 516);
+            this.ClientSize = new System.Drawing.Size(1075, 516);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);

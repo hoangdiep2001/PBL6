@@ -34,24 +34,24 @@ namespace PBL6.View
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -105,6 +105,24 @@ namespace PBL6.View
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(356, 49);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(101, 41);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Chosse file";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(356, 131);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(101, 37);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Refresh";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -122,24 +140,6 @@ namespace PBL6.View
             this.label5.Size = new System.Drawing.Size(39, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Input";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(775, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 42);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Save on database";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(419, 198);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 55);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Giai Ma";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // listBox2
             // 
@@ -159,6 +159,24 @@ namespace PBL6.View
             this.listBox1.Size = new System.Drawing.Size(269, 148);
             this.listBox1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(473, 114);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(133, 42);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Save on database";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(489, 198);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 55);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Giai Ma";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox5);
@@ -172,18 +190,12 @@ namespace PBL6.View
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Key A";
             // 
-            // groupBox3
+            // textBox5
             // 
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.textBox8);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Location = new System.Drawing.Point(562, 114);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(162, 142);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Key G";
+            this.textBox5.Location = new System.Drawing.Point(98, 84);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(32, 22);
+            this.textBox5.TabIndex = 12;
             // 
             // textBox1
             // 
@@ -192,13 +204,6 @@ namespace PBL6.View
             this.textBox1.Size = new System.Drawing.Size(31, 22);
             this.textBox1.TabIndex = 0;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(96, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(34, 22);
-            this.textBox2.TabIndex = 10;
-            // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(40, 84);
@@ -206,33 +211,25 @@ namespace PBL6.View
             this.textBox4.Size = new System.Drawing.Size(31, 22);
             this.textBox4.TabIndex = 11;
             // 
-            // textBox5
+            // textBox2
             // 
-            this.textBox5.Location = new System.Drawing.Point(98, 84);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(32, 22);
-            this.textBox5.TabIndex = 12;
+            this.textBox2.Location = new System.Drawing.Point(96, 21);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(34, 22);
+            this.textBox2.TabIndex = 10;
             // 
-            // textBox6
+            // groupBox3
             // 
-            this.textBox6.Location = new System.Drawing.Point(24, 40);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(32, 22);
-            this.textBox6.TabIndex = 10;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(97, 40);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(33, 22);
-            this.textBox7.TabIndex = 11;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(24, 101);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(32, 22);
-            this.textBox8.TabIndex = 12;
+            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Location = new System.Drawing.Point(632, 114);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(162, 142);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Key G";
             // 
             // textBox9
             // 
@@ -241,29 +238,32 @@ namespace PBL6.View
             this.textBox9.Size = new System.Drawing.Size(34, 22);
             this.textBox9.TabIndex = 13;
             // 
-            // button3
+            // textBox6
             // 
-            this.button3.Location = new System.Drawing.Point(356, 131);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 37);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Refresh";
-            this.button3.UseVisualStyleBackColor = true;
+            this.textBox6.Location = new System.Drawing.Point(24, 40);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(32, 22);
+            this.textBox6.TabIndex = 10;
             // 
-            // button4
+            // textBox8
             // 
-            this.button4.Location = new System.Drawing.Point(356, 49);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 41);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Chosse file";
-            this.button4.UseVisualStyleBackColor = true;
+            this.textBox8.Location = new System.Drawing.Point(24, 101);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(32, 22);
+            this.textBox8.TabIndex = 12;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(97, 40);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(33, 22);
+            this.textBox7.TabIndex = 11;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 484);
+            this.ClientSize = new System.Drawing.Size(955, 504);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button2);

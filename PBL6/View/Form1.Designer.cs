@@ -36,6 +36,7 @@ namespace PBL6
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@ namespace PBL6
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,7 +59,7 @@ namespace PBL6
             // 
             // ButMH
             // 
-            this.ButMH.Location = new System.Drawing.Point(391, 254);
+            this.ButMH.Location = new System.Drawing.Point(377, 245);
             this.ButMH.Name = "ButMH";
             this.ButMH.Size = new System.Drawing.Size(75, 45);
             this.ButMH.TabIndex = 1;
@@ -83,7 +83,7 @@ namespace PBL6
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(131, 79);
+            this.button1.Location = new System.Drawing.Point(117, 79);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 34);
             this.button1.TabIndex = 9;
@@ -93,7 +93,7 @@ namespace PBL6
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 25);
+            this.label1.Location = new System.Drawing.Point(96, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 17);
             this.label1.TabIndex = 11;
@@ -102,7 +102,7 @@ namespace PBL6
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(142, 22);
+            this.comboBox1.Location = new System.Drawing.Point(128, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 12;
@@ -115,11 +115,20 @@ namespace PBL6
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.listBox2);
             this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(55, 296);
+            this.groupBox1.Location = new System.Drawing.Point(41, 296);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(747, 246);
+            this.groupBox1.Size = new System.Drawing.Size(805, 246);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(336, 72);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(86, 54);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Choose file";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -154,7 +163,7 @@ namespace PBL6
             this.listBox2.ItemHeight = 16;
             this.listBox2.Location = new System.Drawing.Point(462, 72);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(237, 148);
+            this.listBox2.Size = new System.Drawing.Size(265, 148);
             this.listBox2.TabIndex = 1;
             // 
             // listBox1
@@ -169,7 +178,7 @@ namespace PBL6
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(377, 25);
+            this.label2.Location = new System.Drawing.Point(363, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 17);
             this.label2.TabIndex = 14;
@@ -223,7 +232,7 @@ namespace PBL6
             this.groupBox2.Controls.Add(this.textBox8);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Location = new System.Drawing.Point(88, 119);
+            this.groupBox2.Location = new System.Drawing.Point(74, 119);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(183, 163);
             this.groupBox2.TabIndex = 21;
@@ -236,25 +245,16 @@ namespace PBL6
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Location = new System.Drawing.Point(517, 119);
+            this.groupBox3.Location = new System.Drawing.Point(503, 119);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(176, 153);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Key G";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(336, 72);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 54);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Choose file";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(680, 51);
+            this.button4.Location = new System.Drawing.Point(666, 51);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 36);
             this.button4.TabIndex = 23;
