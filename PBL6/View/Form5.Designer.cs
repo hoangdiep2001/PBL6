@@ -58,6 +58,8 @@ namespace PBL6.View
             this.txtP1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtP2 = new System.Windows.Forms.TextBox();
             this.btSave2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtG5 = new System.Windows.Forms.TextBox();
@@ -78,10 +80,8 @@ namespace PBL6.View
             this.btRefresh2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btMaHoa = new System.Windows.Forms.Button();
+            this.btGiaiMaa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btRanDomA = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -139,7 +139,7 @@ namespace PBL6.View
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1023, 547);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Giai ma";
+            this.tabPage1.Text = "Ma Hoa";
             // 
             // button2
             // 
@@ -318,7 +318,7 @@ namespace PBL6.View
             this.btGiaiMa.Name = "btGiaiMa";
             this.btGiaiMa.Size = new System.Drawing.Size(75, 42);
             this.btGiaiMa.TabIndex = 12;
-            this.btGiaiMa.Text = "Giai Ma";
+            this.btGiaiMa.Text = "Ma Hoa";
             this.btGiaiMa.UseVisualStyleBackColor = true;
             this.btGiaiMa.Click += new System.EventHandler(this.btGiaiMa_Click);
             // 
@@ -381,22 +381,39 @@ namespace PBL6.View
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.txtP2);
             this.tabPage2.Controls.Add(this.btSave2);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.btMaHoa);
+            this.tabPage2.Controls.Add(this.btGiaiMaa);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.btRanDomA);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1023, 547);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Ma Hoa";
+            this.tabPage2.Text = "Giai Ma";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(481, 116);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 52);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "test";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtP2
+            // 
+            this.txtP2.Location = new System.Drawing.Point(204, 47);
+            this.txtP2.Name = "txtP2";
+            this.txtP2.Size = new System.Drawing.Size(100, 22);
+            this.txtP2.TabIndex = 33;
             // 
             // btSave2
             // 
@@ -547,6 +564,7 @@ namespace PBL6.View
             this.btImport2.TabIndex = 16;
             this.btImport2.Text = "Choose file";
             this.btImport2.UseVisualStyleBackColor = true;
+            this.btImport2.Click += new System.EventHandler(this.btImport2_Click);
             // 
             // btRefresh2
             // 
@@ -575,40 +593,24 @@ namespace PBL6.View
             this.label3.TabIndex = 2;
             this.label3.Text = "Input";
             // 
-            // comboBox1
+            // btGiaiMaa
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(217, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 27;
-            // 
-            // btMaHoa
-            // 
-            this.btMaHoa.Location = new System.Drawing.Point(481, 186);
-            this.btMaHoa.Name = "btMaHoa";
-            this.btMaHoa.Size = new System.Drawing.Size(75, 45);
-            this.btMaHoa.TabIndex = 24;
-            this.btMaHoa.Text = "Mã hóa";
-            this.btMaHoa.UseVisualStyleBackColor = true;
+            this.btGiaiMaa.Location = new System.Drawing.Point(481, 186);
+            this.btGiaiMaa.Name = "btGiaiMaa";
+            this.btGiaiMaa.Size = new System.Drawing.Size(75, 45);
+            this.btGiaiMaa.TabIndex = 24;
+            this.btGiaiMaa.Text = "Giai Ma";
+            this.btGiaiMaa.UseVisualStyleBackColor = true;
+            this.btGiaiMaa.Click += new System.EventHandler(this.btGiaiMaa_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(185, 22);
+            this.label1.Location = new System.Drawing.Point(160, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 17);
             this.label1.TabIndex = 26;
             this.label1.Text = "P";
-            // 
-            // btRanDomA
-            // 
-            this.btRanDomA.Location = new System.Drawing.Point(206, 76);
-            this.btRanDomA.Name = "btRanDomA";
-            this.btRanDomA.Size = new System.Drawing.Size(119, 34);
-            this.btRanDomA.TabIndex = 25;
-            this.btRanDomA.Text = "Random Key A";
-            this.btRanDomA.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -751,10 +753,8 @@ namespace PBL6.View
         private System.Windows.Forms.Button btRefresh2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btMaHoa;
+        private System.Windows.Forms.Button btGiaiMaa;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btRanDomA;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox txtA4;
         private System.Windows.Forms.TextBox txtA1;
@@ -790,5 +790,7 @@ namespace PBL6.View
         private System.Windows.Forms.Button btMatrixNd;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtP2;
+        private System.Windows.Forms.Button button3;
     }
 }
