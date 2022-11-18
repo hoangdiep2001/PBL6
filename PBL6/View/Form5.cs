@@ -100,7 +100,7 @@ namespace PBL6.View
 
         private void btRefresh1_Click(object sender, EventArgs e)
         {
-            txtP1.Text = "";
+          //  txtP1.Text = "";
             txtG1.Text = "";
             txtG2.Text = "";
             txtG3.Text = "";
@@ -147,39 +147,39 @@ namespace PBL6.View
 
         private void btTich2MaTran_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("dap an la "+KK(5,11).ToString());
+            //if (txtA1.Text.Trim()=="" || txtA2.Text.Trim() == "" || txtA3.Text.Trim() == "" || txtA4.Text.Trim() == ""
+            //    || txtG1.Text.Trim() == ""|| txtG2.Text.Trim() == ""|| txtG3.Text.Trim() == ""|| txtG4.Text.Trim() == ""
+            //    || txtP1.Text.Trim() == "")
+            //{
+            //    MessageBox.Show(" thong tin khoa P,A,G còn thiếu !!!");
+
+
+            //}   
             
-            if (txtA1.Text.Trim()=="" || txtA2.Text.Trim() == "" || txtA3.Text.Trim() == "" || txtA4.Text.Trim() == ""
-                || txtG1.Text.Trim() == ""|| txtG2.Text.Trim() == ""|| txtG3.Text.Trim() == ""|| txtG4.Text.Trim() == ""
-                || txtP1.Text.Trim() == "")
-            {
-                MessageBox.Show(" thong tin khoa P,A,G còn thiếu !!!");
+            //else
+            //{
+            //    Matrix X = new Matrix();
+            //    Matrix A = new Matrix();
+            //    Matrix B = new Matrix();
+
+            //    A.m1 = float.Parse(txtA1.Text);
+            //    A.m2 = float.Parse(txtA2.Text);
+            //    A.m3 = float.Parse(txtA3.Text);
+            //    A.m4 = float.Parse(txtA4.Text);
 
 
-            }   
-            
-            else
-            {
-                Matrix X = new Matrix();
-                Matrix A = new Matrix();
-                Matrix B = new Matrix();
+            //    B.m1 = float.Parse(txtG1.Text);
+            //    B.m2 = float.Parse(txtG2.Text);
+            //    B.m3 = float.Parse(txtG3.Text);
+            //    B.m4 = float.Parse(txtG4.Text);
 
-                A.m1 = float.Parse(txtA1.Text);
-                A.m2 = float.Parse(txtA2.Text);
-                A.m3 = float.Parse(txtA3.Text);
-                A.m4 = float.Parse(txtA4.Text);
-
-
-                B.m1 = float.Parse(txtG1.Text);
-                B.m2 = float.Parse(txtG2.Text);
-                B.m3 = float.Parse(txtG3.Text);
-                B.m4 = float.Parse(txtG4.Text);
-
-                MessageBox.Show(" gia tri khi nhan 2 ma tran la " + A.Tich_mtr(B).m1.ToString()+"a" + A.Tich_mtr( B).m2.ToString() + "a"
-                    + A.Tich_mtr(B).m3.ToString() + "a"
-                    + A.Tich_mtr( B).m4.ToString() + "a");
+            //    MessageBox.Show(" gia tri khi nhan 2 ma tran la " + A.Tich_mtr(B).m1.ToString()+"a" + A.Tich_mtr( B).m2.ToString() + "a"
+            //        + A.Tich_mtr(B).m3.ToString() + "a"
+            //        + A.Tich_mtr( B).m4.ToString() + "a");
                 
 
-            }    
+            //}    
 
         }
 
@@ -188,7 +188,8 @@ namespace PBL6.View
            
             Matrix A = new Matrix();
             Matrix P_A = new Matrix();
-            int P = Convert.ToInt32(txtP1.Text);
+            //  int P = Convert.ToInt32(txtP1.Text);
+            int P = 29;
 
             A.m1 = float.Parse(txtA1.Text);
             A.m2 = float.Parse(txtA2.Text);
@@ -257,7 +258,8 @@ namespace PBL6.View
             A.m2 = float.Parse(txtA2.Text);
             A.m3 = float.Parse(txtA3.Text);
             A.m4 = float.Parse(txtA4.Text);
-            int P = Convert.ToInt32(txtP1.Text.ToString());
+            //   int P = Convert.ToInt32(txtP1.Text.ToString());
+            int P = 29;
 
 
             B.m1 = float.Parse(txtG1.Text);
@@ -315,7 +317,7 @@ namespace PBL6.View
                 else
                 {
 
-                    P = Convert.ToInt32(txtP1.Text.ToString());
+                    P = 29;
 
                     A.m1 = float.Parse(txtA1.Text);
                     A.m2 = float.Parse(txtA2.Text);
@@ -338,7 +340,8 @@ namespace PBL6.View
                             MessageBox.Show("det(G_c) phải có giá trị bằng 0 ");
                             break;
                         case 0:
-                            P = Convert.ToInt32(txtP1.Text.ToString());
+                            // P = Convert.ToInt32(txtP1.Text.ToString());
+                            P = 29;
 
                             A.m1 = float.Parse(txtA1.Text);
                             A.m2 = float.Parse(txtA2.Text);
@@ -381,20 +384,6 @@ namespace PBL6.View
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             break;
                        
                     }
@@ -416,13 +405,13 @@ namespace PBL6.View
 
         public bool kt_ThieuthongTin()
         {
-            if ((txtA1.Text.Trim() == "") || (txtA2.Text.Trim() == "") || (txtA3.Text.Trim() == "") ||
-                (txtA4.Text.Trim() == "") || (txtG1.Text.Trim() == "") || (txtG2.Text.Trim() == "") ||
-                (txtG3.Text.Trim() == "") || (txtG4.Text.Trim() == "") || (txtP1.Text.Trim() == "")
+            //if ((txtA1.Text.Trim() == "") || (txtA2.Text.Trim() == "") || (txtA3.Text.Trim() == "") ||
+            //    (txtA4.Text.Trim() == "") || (txtG1.Text.Trim() == "") || (txtG2.Text.Trim() == "") ||
+            //    (txtG3.Text.Trim() == "") || (txtG4.Text.Trim() == "") || (txtP1.Text.Trim() == "")
 
-                )
+            //    )
                 return false;
-            else return true;
+            //else return true;
         }
 
         public bool kt_thongtin_hople()
@@ -439,6 +428,7 @@ namespace PBL6.View
             Random rand = new Random();
             int a;
             int b;
+            int det;
       
 
             do
@@ -450,11 +440,12 @@ namespace PBL6.View
                 A.m2 = b;
                 A.m3 = b;
                 A.m4 = a;
+                det = a * a - b * b;
 
 
             }
 
-            while (ucln(a, b) == false
+            while (ucln(a, b) == false || (ucln(det,29) == false)
             );
 
 
@@ -950,7 +941,7 @@ namespace PBL6.View
                     //                    G.m4 = float.Parse(txtG4.Text);
 
 
-                    P = Convert.ToInt32(txtP2.Text.ToString());
+                    P = 29;
 
                     A.m1 = float.Parse(txtA5.Text);
                     A.m2 = float.Parse(txtA6.Text);
@@ -1077,6 +1068,30 @@ namespace PBL6.View
 
             }
         }
+
+        private void btRandomKey_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("gia tr cua K la : " + random_A().m1.ToString() + "a" + random_A().m2.ToString() + "a"
+            //    + random_A().m3.ToString() + "a" + random_A().m4.ToString() + "a");
+            txtA1.Text = random_A().m1.ToString();
+            txtA2.Text = random_A().m2.ToString();
+            txtA3.Text = random_A().m3.ToString();
+            txtA4.Text = random_A().m4.ToString();
+        }
+
+        
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
         //
         //public string mahoa(string banro1)
         //{
@@ -1117,6 +1132,42 @@ namespace PBL6.View
 
 
         //    return banma;
+        public float KK(float det , int P)
+        {
+
+
+
+            float dinhthuc_A = det;
+
+            if (dinhthuc_A > 0)
+            {
+                for (int i = 1; i < 999999999; i=i+2)
+                {
+                    if ((dinhthuc_A * i) % P == 1)
+                    {
+                        return i;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 1; i < 99999; i++)
+                {
+                    if ((-dinhthuc_A * i) % P == 1)
+                    {
+                        return -i;
+                    }
+                }
+
+            }
+
+
+
+            return 0;
+
+
+
+        }
     }
     
 
