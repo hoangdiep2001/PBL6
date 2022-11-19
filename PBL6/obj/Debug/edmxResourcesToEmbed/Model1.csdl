@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PBL6Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GiaiMa">
+    <Key>
+      <PropertyRef Name="IDGM" />
+    </Key>
+    <Property Name="IDGM" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KeyP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KeyA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KeyG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TextGM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDAccount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK_GiaiMa_User" FromRole="GiaiMa" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Mahoa">
+    <Key>
+      <PropertyRef Name="IDMH" />
+    </Key>
+    <Property Name="IDMH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KeyP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KeyA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KeyG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TextMH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDAccount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Mahoa_User" FromRole="Mahoa" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="IDAccount" />
+    </Key>
+    <Property Name="IDAccount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GiaiMa" Relationship="Self.FK_GiaiMa_User" FromRole="User" ToRole="GiaiMa" />
+    <NavigationProperty Name="Mahoa" Relationship="Self.FK_Mahoa_User" FromRole="User" ToRole="Mahoa" />
+  </EntityType>
+  <Association Name="FK_GiaiMa_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="GiaiMa" Type="Self.GiaiMa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IDAccount" />
+      </Principal>
+      <Dependent Role="GiaiMa">
+        <PropertyRef Name="IDAccount" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mahoa_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Mahoa" Type="Self.Mahoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IDAccount" />
+      </Principal>
+      <Dependent Role="Mahoa">
+        <PropertyRef Name="IDAccount" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PBL6Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GiaiMa" EntityType="Self.GiaiMa" />
+    <EntitySet Name="Mahoa" EntityType="Self.Mahoa" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK_GiaiMa_User" Association="Self.FK_GiaiMa_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="GiaiMa" EntitySet="GiaiMa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mahoa_User" Association="Self.FK_Mahoa_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Mahoa" EntitySet="Mahoa" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

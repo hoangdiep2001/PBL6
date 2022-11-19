@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PBL6ModelStoreContainer" CdmEntityContainer="PBL6Entities">
+    <EntitySetMapping Name="GiaiMa">
+      <EntityTypeMapping TypeName="PBL6Model.GiaiMa">
+        <MappingFragment StoreEntitySet="GiaiMa">
+          <ScalarProperty Name="IDGM" ColumnName="IDGM" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="KeyP" ColumnName="KeyP" />
+          <ScalarProperty Name="KeyA" ColumnName="KeyA" />
+          <ScalarProperty Name="KeyG" ColumnName="KeyG" />
+          <ScalarProperty Name="TextGM" ColumnName="TextGM" />
+          <ScalarProperty Name="IDAccount" ColumnName="IDAccount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mahoa">
+      <EntityTypeMapping TypeName="PBL6Model.Mahoa">
+        <MappingFragment StoreEntitySet="Mahoa">
+          <ScalarProperty Name="IDMH" ColumnName="IDMH" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="KeyP" ColumnName="KeyP" />
+          <ScalarProperty Name="KeyA" ColumnName="KeyA" />
+          <ScalarProperty Name="KeyG" ColumnName="KeyG" />
+          <ScalarProperty Name="TextMH" ColumnName="TextMH" />
+          <ScalarProperty Name="IDAccount" ColumnName="IDAccount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PBL6Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="PBL6Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="IDAccount" ColumnName="IDAccount" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

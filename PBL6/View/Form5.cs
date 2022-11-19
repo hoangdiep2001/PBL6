@@ -9,15 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using PBL6.DTO;
+using PBL6.BLL;
 
 
 namespace PBL6.View
 {
     public partial class Form5 : Form
     {
-        public Form5()
+        public Form5(string name)
         {
+            string Nameaccount = name;
             InitializeComponent();
+            Show();
         }
 
         
@@ -860,14 +863,78 @@ namespace PBL6.View
             }
             return true;
         }
-
-        public bool matrixA_modunP_matrixG_dinhdang()
+        string input;
+        public bool kt_dinhdang_vanban()
         {
-             return true;
+           /* char[] s;
+            s = txtBanRo2.Text.ToCharArray();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if ((s[i] >= 65 & s[i] <= 90) || (s[i] >= 97 & s[i] <= 122) || s[i] == 32 || s[i] == 35 || s[i] == 38 || s[i] == 64)
+                {
+                    if (s[i] == 32) continue;
+                    input += s[i].ToString();
+               
+                }
+                else
+                {
+                    MessageBox.Show("Chuỗi đầu vào input không hợp lệ");
+                    return false;
+                }
+            }
+            input = input.ToUpper();
+*/
+            return true;
           
 
         }
-        public bool kt_dinhdang_vanban()
+        public bool CheckSonguyen (string s2)
+        {
+            char[] s1;
+            s1 = s2.ToCharArray();
+            if (s2[0] == '-')
+            {
+                input += s1[0].ToString();
+                for (int i = 1; i < s1.Length; i++)
+                {
+                    if ((s1[i] >= 48 & s1[i] <= 57))
+                    {
+                        input += s1[i].ToString();
+                    }
+                    else
+                    {
+                        
+                        input = "";
+                        break;
+                        return false;
+                    }
+                }
+             
+
+            }
+            if ((s1[0] >= 48 & s1[0] <= 57))
+            {
+                for (int i = 0; i < s1.Length; i++)
+                {
+                    if ((s1[i] >= 48 & s1[i] <= 57))
+                    {
+                        input += s1[i].ToString();
+                    }
+                    else
+                    {
+                        input = "";
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+
+        }
+        public bool matrixA_modunP_matrixG_dinhdang()
         {
             return true;
         }
@@ -1167,6 +1234,96 @@ namespace PBL6.View
 
 
 
+        }
+
+        private void btSave1_Click(object sender, EventArgs e)
+        {
+            Mahoa s = new Mahoa();
+            s.IDMH = Convert.ToString(BLL.BLL.Instance.GetAllMahoa().Count() + 1);
+            s.KeyA = txtA1.Text + "-" + txtA2.Text + "-" + txtA3.Text + "-" + txtA4.Text ;
+            s.KeyG = txtG1.Text + "-" + txtG2.Text + "-" + txtG3.Text + "-" + txtG4.Text ;
+            s.KeyP = "29";
+            s.Text = txtBanMa1.Text;
+            s.TextMH = txtBanRo1.Text;
+            BLL.BLL.Instance.AddMahoa(s);
+            MessageBox.Show("Đã lưu");
+            Show();
+        }
+
+        private void btSave2_Click(object sender, EventArgs e)
+        {
+            GiaiMa s = new GiaiMa();
+            s.IDGM = Convert.ToString(BLL.BLL.Instance.GetAllGiaima().Count() + 1);
+            s.KeyA = txtA5.Text + "-" + txtA6.Text + "-" + txtA7.Text + "-" + txtA8.Text;
+            s.KeyG = txtG5.Text + "-" + txtG6.Text + "-" + txtG7.Text + "-" + txtG8.Text ;
+            s.KeyP = "29";
+            s.Text = txtBanMa2.Text;
+            s.TextGM = txtBanRo2.Text; ;
+            BLL.BLL.Instance.AddGiaima(s);
+            MessageBox.Show("Đã lưu");
+            Show();
+        }
+        public void Show()
+        {
+            dataGridView1.DataSource = BLL.BLL.Instance.GetAllMahoa();
+            dataGridView2.DataSource = BLL.BLL.Instance.GetAllGiaima();
+        }
+
+        private void btClear_MH_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Xóa", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                    {
+                        string IDMH = Convert.ToString(row.Cells[0].Value);
+                        BLL.BLL.Instance.DelMahoa(IDMH);
+                    }
+                }
+                Show();
+            }
+            else
+            {
+                MessageBox.Show("Lựa chọn không hợp lệ");
+            }
+        }
+
+        private void btClear_GM_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count == 1)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Xóa", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+                    {
+                        string IDGM = Convert.ToString(row.Cells[0].Value);
+                        BLL.BLL.Instance.DelGiaiMa(IDGM);
+                    }
+                }
+                Show();
+            }
+            else
+            {
+                MessageBox.Show("Lựa chọn không hợp lệ");
+            }
+        }
+
+        private void bt_See_MH_Click(object sender, EventArgs e)
+        {
+            string s;
+            s = txt1.Text + "-" + txt2.Text + "-" + txt3.Text + "-" + txt4.Text;
+            dataGridView1.DataSource = BLL.BLL.Instance.GetMahoaByKeyA(s);
+        }
+
+       
+        private void bt_See_GM_Click(object sender, EventArgs e)
+        {
+            string s;
+            s = txt5.Text + "-" + txt6.Text + "-" + txt7.Text + "-" + txt8.Text;
+            dataGridView2.DataSource = BLL.BLL.Instance.GetGiaimaByKeyA(s);
         }
     }
     
