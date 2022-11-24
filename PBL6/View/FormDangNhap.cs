@@ -32,5 +32,10 @@ namespace PBL6.View
                 MessageBox.Show("Tên tài khoản và mật khẩu không đúng");
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace PBL6.View
         {
             string Nameaccount = name;
             InitializeComponent();
-            Show();
+           // Show();
         }
 
         
@@ -233,20 +233,6 @@ namespace PBL6.View
         private void button2_Click(object sender, EventArgs e)
         {
 
-            //Matrix G = new Matrix(17, 19, 29, 37);
-            //int n = 4;
-            //int[,] a = new int[,]
-            //    {
-            //        {(int)G.m1,(int)G.m2,(int)G.m3,(int)G.m4 },
-            //        {(int)G.m2,(int)G.m1,(int)G.m4,(int)G.m3 },
-            //        {(int)G.m3,(int)G.m4,(int)G.m1,(int)G.m2 },
-            //        {(int)G.m4,(int)G.m3,(int)G.m2,(int)G.m1 }
-
-
-
-            //    };
-
-            //   MessageBox.Show("dinh thuc ma tran G_c la " + KT_detGc());
 
 
             Matrix P_A = new Matrix();
@@ -288,32 +274,41 @@ namespace PBL6.View
         private void btGiaiMa_Click(object sender, EventArgs e)
         {
 
-            string s = txtBanMa1.Text.Trim().ToString();
-            string banro = s;
-            //string banro = "JDHFJDJD";
-
-            // string banro = "ADDIDAII";
-
-
-
-            Matrix A = new Matrix();
-            Matrix A_1 = new Matrix();
-            Matrix G = new Matrix();
-            Matrix K = new Matrix();
-            //Matrix2 C = new Matrix2();
-          //  Matrix2 M = new Matrix2();
-            Matrix2 V1 = new Matrix2();
-            Matrix2 V2 = new Matrix2();
-            Matrix P_A = new Matrix();
-            int P;
-            float det_A_nd;
-            if (kt_dinhdang_vanban()== false)
+           
+            if (kt_dinhdang_vanban(txtBanMa1.Text)== false)
             {
                 MessageBox.Show("Lỗi văn bản");
             }
             else
             {
-                if(matrixA_modunP_matrixG_dinhdang() == false)
+                string s = input.Trim().ToString();
+                string banro = s;
+
+                if (s.Length >0 && s.Length%2 ==1)
+                {
+                    banro = new_chuoi(s);
+                }    
+                
+                //string banro = "JDHFJDJD";
+
+                // string banro = "ADDIDAII";
+
+
+
+                Matrix A = new Matrix();
+                Matrix A_1 = new Matrix();
+                Matrix G = new Matrix();
+                Matrix K = new Matrix();
+                //Matrix2 C = new Matrix2();
+                //  Matrix2 M = new Matrix2();
+                Matrix2 V1 = new Matrix2();
+                Matrix2 V2 = new Matrix2();
+                Matrix P_A = new Matrix();
+                int P;
+                float det_A_nd;
+                string ss;
+                ss = txtG1.Text + txtG2.Text + txtG3.Text + txtG4.Text;
+                if (matrixA_modunP_matrixG_dinhdang(ss) == false)
                 {
                     MessageBox.Show("Lỗi dinh dạng P, A, G");
                 }
@@ -588,16 +583,48 @@ namespace PBL6.View
 
                 };
 
-            if(det(a, n) == 0)
+            if (det(a, n) == 0)
             {
                 return true;
 
             }
             return false;
 
-           
+
 
         }
+
+        public bool KT_detGc2()
+        {
+            Matrix G = new Matrix();
+            G.m1 = float.Parse(txtG5.Text);
+            G.m2 = float.Parse(txtG6.Text);
+            G.m3 = float.Parse(txtG7.Text);
+            G.m4 = float.Parse(txtG8.Text);
+
+            int n = 4;
+            int[,] a = new int[,]
+                {
+                    {(int)G.m1,(int)G.m2,(int)G.m3,(int)G.m4 },
+                    {(int)G.m2,(int)G.m1,(int)G.m4,(int)G.m3 },
+                    {(int)G.m3,(int)G.m4,(int)G.m1,(int)G.m2 },
+                    {(int)G.m4,(int)G.m3,(int)G.m2,(int)G.m1 }
+
+
+
+                };
+
+            if (det(a, n) == 0)
+            {
+                return true;
+
+            }
+            return false;
+
+
+
+        }
+
 
 
         public string font_Norman(string str1)
@@ -616,27 +643,7 @@ namespace PBL6.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string s = txtBanMa1.Text.Trim().ToString();
-            string banro = s;
-            int P =29;
-
-            Matrix K = new Matrix(2, 24, 10, 3);
-
-
-            Matrix2 V1 = new Matrix2(3, 4);
-            Matrix2 V2 = new Matrix2(4, 3);
-            //Matrix K = new Matrix(2, 24, 10, 3);
-            //Matrix2 M = new Matrix2(1, 4);
-            //Matrix2 V = new Matrix2(3, 4);         
-            //Matrix2 matrix = new Matrix2();
-            //int P = 29;
-
-            //matrix.n1= Mi_to_Ci(K, M, V, P).n1;
-            //matrix.n2 = Mi_to_Ci(K, M, V, P).n2;
-
-
-            txtBanRo1.Text = (mahoa(banro, K, V1, V2, P));
-          //  MessageBox.Show(mahoa(banro,K,V1,V2,P));
+           // MessageBox.Show(new_chuoi("vudeptra"));
         }
 
 
@@ -840,6 +847,43 @@ namespace PBL6.View
                 return 4;
             }
 
+            //if (KT_detGc2() == false)
+            //{
+            //    return 5;
+            //}
+
+
+            return 0;
+        }
+
+        public int matrixA_modunP_matrixG_logic2(Matrix A, int P)
+        {
+            int a, b,c,d, dt_A;
+            a = int.Parse(A.m1.ToString());
+            b = int.Parse(A.m2.ToString());
+            c = int.Parse(A.m3.ToString());
+            d = int.Parse(A.m4.ToString());
+            dt_A = int.Parse((A.m1 * A.m4 - A.m2 * A.m3).ToString());
+           
+            if(ucln(29,dt_A) == false)
+                {
+                return 1;
+            }
+            if (ucln(a, b) == false || a!=d ||b!=c)
+            {
+                return 2;
+            }
+            if (ucln(dt_A, P) == false)
+            {
+               // return 3;
+
+            }
+            if (KT_detGc2() == false)
+            {
+                return 4;
+            }
+
+
 
             return 0;
         }
@@ -864,150 +908,138 @@ namespace PBL6.View
             return true;
         }
         string input;
-        public bool kt_dinhdang_vanban()
+        public bool kt_dinhdang_vanban(string s1)
         {
-           /* char[] s;
-            s = txtBanRo2.Text.ToCharArray();
+            char[] s;
+            s = s1.ToCharArray();
+            input = "";
             for (int i = 0; i < s.Length; i++)
             {
                 if ((s[i] >= 65 & s[i] <= 90) || (s[i] >= 97 & s[i] <= 122) || s[i] == 32 || s[i] == 35 || s[i] == 38 || s[i] == 64)
                 {
                     if (s[i] == 32) continue;
                     input += s[i].ToString();
-               
+
                 }
                 else
                 {
-                    MessageBox.Show("Chuỗi đầu vào input không hợp lệ");
+
+                    input = "";
                     return false;
                 }
             }
+
             input = input.ToUpper();
-*/
+            
+            
             return true;
           
 
         }
-        public bool CheckSonguyen (string s2)
+        public bool CheckSonguyen (string s)
         {
-            char[] s1;
-            s1 = s2.ToCharArray();
-            if (s2[0] == '-')
-            {
-                input += s1[0].ToString();
-                for (int i = 1; i < s1.Length; i++)
-                {
-                    if ((s1[i] >= 48 & s1[i] <= 57))
-                    {
-                        input += s1[i].ToString();
-                    }
-                    else
-                    {
-                        
-                        input = "";
-                        break;
-                        return false;
-                    }
-                }
-             
+            char [] s1;
+            s1 = s.ToCharArray();
 
-            }
-            if ((s1[0] >= 48 & s1[0] <= 57))
+            if(s1.Length <4)
             {
-                for (int i = 0; i < s1.Length; i++)
+                return false;
+            }
+            for (int i = 0; i < s.Length; i++)
+            {
+                if ((s1[i] >= 48 & s1[i] <= 57))
                 {
-                    if ((s1[i] >= 48 & s1[i] <= 57))
-                    {
-                        input += s1[i].ToString();
-                    }
-                    else
-                    {
-                        input = "";
-                        return false;
-                    }
+                    
+                }
+                else
+                {
+
+                    return false;
                 }
             }
-            else
+            return true;
+
+        }
+        public bool CheckSonguyen2(string s)
+        {
+            if (s == "")
             {
                 return false;
             }
             return true;
 
         }
-        public bool matrixA_modunP_matrixG_dinhdang()
+        string a;
+        public bool matrixA_modunP_matrixG_dinhdang(string ss)
         {
-            return true;
+
+            
+            if (CheckSonguyen(ss))
+            {
+                return true;
+            }
+            
+            return false;
+        }
+
+        public bool matrixA_modunP_matrixG_dinhdang2(string ss)
+        {
+
+
+            if (CheckSonguyen(ss))
+            {
+                return true;
+            }
+
+            return false;
         }
         /// 
         /// 
         /// 
         ///
         /// 
+
+        //  string  input2 =
+        string[] ss2;
         private void btGiaiMaa_Click(object sender, EventArgs e)
         {
-            // string banro = "JDHFJDAKDHSJDYEFRA";
-            string s = txtBanRo2.Text.Trim().ToString();
-            string banma = s;
-
-
-
-
-
-            Matrix A = new Matrix();
-            Matrix A_1 = new Matrix();
-            Matrix G = new Matrix();
-            Matrix G_1 = new Matrix();
-            Matrix K_1 = new Matrix();
-            Matrix2 V1 = new Matrix2();
-            Matrix2 V2 = new Matrix2();
-            Matrix P_A = new Matrix();
-            Matrix P_G = new Matrix();
-            int P;
-            float det_A_nd;
-            float det_G_nd;
-            if (3 > 7)
+            if (kt_dinhdang_vanban(txtBanRo2.Text) == false)
             {
                 MessageBox.Show("Lỗi văn bản");
-            }
+            }// string banro = "JDHFJDAKDHSJDYEFRA";
+
             else
             {
-                if (5>8)
+                string s = txtBanRo2.Text.Trim().ToString();
+                string banma = s;
+                Matrix A = new Matrix();
+                Matrix A_1 = new Matrix();
+                Matrix G = new Matrix();
+                Matrix G_1 = new Matrix();
+                Matrix K_1 = new Matrix();
+                Matrix2 V1 = new Matrix2();
+                Matrix2 V2 = new Matrix2();
+                Matrix P_A = new Matrix();
+                Matrix P_G = new Matrix();
+                int P;
+                float det_A_nd;
+                float det_G_nd;
+
+                string ss1;
+                string ss2;
+                
+                ss1 = txtG5.Text + txtG6.Text + txtG7.Text + txtG8.Text;
+                ss2 = txtA5.Text + txtA6.Text + txtA7.Text + txtA8.Text;
+             
+               // MessageBox.Show(ss2);
+                if (matrixA_modunP_matrixG_dinhdang(ss1 ) == false || matrixA_modunP_matrixG_dinhdang(ss2) == false)
+                //|| matrixA_modunP_matrixG_dinhdang(ss2) == false
                 {
-                    MessageBox.Show("Lỗi dinh dạng P, A, G");
+                    MessageBox.Show("Hãy nhập đúng định dạng cho 2 Key !");
                 }
+                //HERE
                 else
                 {
-
-
-
-                    //            switch (matrixA_modunP_matrixG_logic(A, P))
-                    //            {
-                    //                case 1:
-                    //                    MessageBox.Show("P phải là số nguyên tố! ");
-                    //                    break;
-                    //                case 2:
-                    //                    MessageBox.Show("Ma trận A phải là ma trận nguyên tố! ");
-                    //                    break;
-                    //                case 3:
-                    //                    MessageBox.Show("P và det(A) phải nguyên tố cùng nhau!");
-                    //                    break;
-                    //                case 4:
-                    //                    MessageBox.Show("det(G_c) phải có giá trị bằng 0 ");
-                    //                    break;
-                    //                case 0:
-                    //                    P = Convert.ToInt32(txtP1.Text.ToString());
-
-                    //                    A.m1 = float.Parse(txtA1.Text);
-                    //                    A.m2 = float.Parse(txtA2.Text);
-                    //                    A.m3 = float.Parse(txtA3.Text);
-                    //                    A.m4 = float.Parse(txtA4.Text);
-
-                    //                    G.m1 = float.Parse(txtG1.Text);
-                    //                    G.m2 = float.Parse(txtG2.Text);
-                    //                    G.m3 = float.Parse(txtG3.Text);
-                    //                    G.m4 = float.Parse(txtG4.Text);
-
-
                     P = 29;
 
                     A.m1 = float.Parse(txtA5.Text);
@@ -1022,50 +1054,151 @@ namespace PBL6.View
                     det_A_nd = Number_NghichDao(A, P);
                     det_G_nd = Number_NghichDao(G, P);
 
+                    switch (matrixA_modunP_matrixG_logic2(A, P))
+                    {
+                        case 1:
+                            MessageBox.Show("P và det(A) phải nguyên tố cùng nhau!  ");
+                            break;
+                        case 2:
+                            MessageBox.Show("Ma trận A phải là ma trận nguyên tố tuần hoàn! ");
+                            break;
+                        case 3:
+                            MessageBox.Show(" aaa");
+                            break;
+                        case 4:
+                            MessageBox.Show("det(G_c) phải có giá trị bằng 0 ");
+                            break;
+                        case 0:
+                            P = 29;
 
+                            A.m1 = float.Parse(txtA5.Text);
+                            A.m2 = float.Parse(txtA6.Text);
+                            A.m3 = float.Parse(txtA7.Text);
+                            A.m4 = float.Parse(txtA8.Text);
 
-                    P_A.m1 = A.m4 * det_A_nd;
-                    P_A.m2 = -A.m2 * det_A_nd;
-                    P_A.m3 = -A.m3 * det_A_nd;
-                    P_A.m4 = A.m1 * det_A_nd;
-
-                    P_G.m1 = G.m4 * det_G_nd;
-                    P_G.m2 = -G.m2 * det_G_nd;
-                    P_G.m3 = -G.m3 * det_G_nd;
-                    P_G.m4 = G.m1 * det_G_nd;
-
-
-                    A_1 = matrix_mod_P(P_A, P);
-                    G_1 = matrix_mod_P(P_G, P);
-
-                    K_1 = A.Tich_mtr(G_1);
-                    K_1 = K_1.Tich_mtr(A_1);
-                    K_1 = matrix_mod_P(K_1, P);
-                   
-                    V1.n1 = A.m1;
-                    V1.n2 = A.m2;
-
-                    V2.n1 = A.m2;
-                    V2.n2 = A.m1;
-
-                                   //    MessageBox.Show(GiaiMa(banma, K_1, V1, V2, P));
-                                   txtBanMa2.Text = GiaiMa(banma, K_1, V1, V2, P);
-
-
-
+                            G.m1 = float.Parse(txtG5.Text);
+                            G.m2 = float.Parse(txtG6.Text);
+                            G.m3 = float.Parse(txtG7.Text);
+                            G.m4 = float.Parse(txtG8.Text);
+                            det_A_nd = Number_NghichDao(A, P);
+                            det_G_nd = Number_NghichDao(G, P);
 
 
 
+                            P_A.m1 = A.m4 * det_A_nd;
+                            P_A.m2 = -A.m2 * det_A_nd;
+                            P_A.m3 = -A.m3 * det_A_nd;
+                            P_A.m4 = A.m1 * det_A_nd;
+
+                            P_G.m1 = G.m4 * det_G_nd;
+                            P_G.m2 = -G.m2 * det_G_nd;
+                            P_G.m3 = -G.m3 * det_G_nd;
+                            P_G.m4 = G.m1 * det_G_nd;
+
+
+                            A_1 = matrix_mod_P(P_A, P);
+                            G_1 = matrix_mod_P(P_G, P);
+
+                            K_1 = A.Tich_mtr(G_1);
+                            K_1 = K_1.Tich_mtr(A_1);
+                            K_1 = matrix_mod_P(K_1, P);
+
+                            V1.n1 = A.m1;
+                            V1.n2 = A.m2;
+
+                            V2.n1 = A.m2;
+                            V2.n2 = A.m1;
+
+                            txtBanMa2.Text = GiaiMa(banma, K_1, V1, V2, P);
+
+
+                    
 
 
 
-                    //                    break;
+                    break;
 
-                    //            }
-                    //       }
-
+                    }
                 }
+                /// HERE
+
             }
+            //string s = txtBanRo2.Text.Trim().ToString();
+            //string banma = s;
+
+
+
+
+
+            //Matrix A = new Matrix();
+            //Matrix A_1 = new Matrix();
+            //Matrix G = new Matrix();
+            //Matrix G_1 = new Matrix();
+            //Matrix K_1 = new Matrix();
+            //Matrix2 V1 = new Matrix2();
+            //Matrix2 V2 = new Matrix2();
+            //Matrix P_A = new Matrix();
+            //Matrix P_G = new Matrix();
+            //int P;
+            //float det_A_nd;
+            //float det_G_nd;
+            //if (3 > 7)
+            //{
+            //    MessageBox.Show("Lỗi văn bản");
+            //}
+            //else
+            //{
+            //    if (5>8)
+            //    {
+            //        MessageBox.Show("Lỗi dinh dạng P, A, G");
+            //    }
+            //    else
+            //    {
+            //        P = 29;
+
+            //        A.m1 = float.Parse(txtA5.Text);
+            //        A.m2 = float.Parse(txtA6.Text);
+            //        A.m3 = float.Parse(txtA7.Text);
+            //        A.m4 = float.Parse(txtA8.Text);
+
+            //        G.m1 = float.Parse(txtG5.Text);
+            //        G.m2 = float.Parse(txtG6.Text);
+            //        G.m3 = float.Parse(txtG7.Text);
+            //        G.m4 = float.Parse(txtG8.Text);
+            //        det_A_nd = Number_NghichDao(A, P);
+            //        det_G_nd = Number_NghichDao(G, P);
+
+
+
+            //        P_A.m1 = A.m4 * det_A_nd;
+            //        P_A.m2 = -A.m2 * det_A_nd;
+            //        P_A.m3 = -A.m3 * det_A_nd;
+            //        P_A.m4 = A.m1 * det_A_nd;
+
+            //        P_G.m1 = G.m4 * det_G_nd;
+            //        P_G.m2 = -G.m2 * det_G_nd;
+            //        P_G.m3 = -G.m3 * det_G_nd;
+            //        P_G.m4 = G.m1 * det_G_nd;
+
+
+            //        A_1 = matrix_mod_P(P_A, P);
+            //        G_1 = matrix_mod_P(P_G, P);
+
+            //        K_1 = A.Tich_mtr(G_1);
+            //        K_1 = K_1.Tich_mtr(A_1);
+            //        K_1 = matrix_mod_P(K_1, P);
+
+            //        V1.n1 = A.m1;
+            //        V1.n2 = A.m2;
+
+            //        V2.n1 = A.m2;
+            //        V2.n2 = A.m1;
+
+            //    txtBanMa2.Text = GiaiMa(banma, K_1, V1, V2, P);
+
+
+            //    }
+            //}
         }
 
 
@@ -1144,6 +1277,23 @@ namespace PBL6.View
             txtA2.Text = random_A().m2.ToString();
             txtA3.Text = random_A().m3.ToString();
             txtA4.Text = random_A().m4.ToString();
+        }
+
+        public string new_chuoi(string s)
+        {
+
+            string ss="";
+            string x;
+
+            int length = s.Length;
+            x = s.Substring(length - 1);
+
+            if(length%2 ==1)
+            {
+                ss = s + x;
+                return ss;
+            }    
+            return s;
         }
 
         

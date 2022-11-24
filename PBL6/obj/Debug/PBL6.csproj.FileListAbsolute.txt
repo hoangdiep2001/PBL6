@@ -2,17 +2,12 @@ D:\PBL6\PBL6\PBL6\bin\Debug\PBL6.exe.config
 D:\PBL6\PBL6\PBL6\bin\Debug\PBL6.exe
 D:\PBL6\PBL6\PBL6\bin\Debug\PBL6.pdb
 D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.csprojAssemblyReference.cache
-D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.Form1.resources
 D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.Properties.Resources.resources
-D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.View.Form2.resources
 D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.csproj.GenerateResource.cache
 D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.csproj.CoreCompileInputs.cache
 D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.exe
 D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.pdb
-D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.View.Form3.resources
-D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.View.Form4.resources
 D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.View.Form5.resources
-D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.Form2.resources
 C:\Users\User\OneDrive\Máy tính\PBL6^\PBL6\PBL6\bin\Debug\PBL6.exe.config
 C:\Users\User\OneDrive\Máy tính\PBL6^\PBL6\PBL6\bin\Debug\PBL6.exe
 C:\Users\User\OneDrive\Máy tính\PBL6^\PBL6\PBL6\bin\Debug\PBL6.pdb
@@ -28,3 +23,9 @@ C:\Users\User\OneDrive\Máy tính\PBL6^\PBL6\PBL6\obj\Debug\PBL6.csproj.CoreComp
 C:\Users\User\OneDrive\Máy tính\PBL6^\PBL6\PBL6\obj\Debug\PBL6.exe
 C:\Users\User\OneDrive\Máy tính\PBL6^\PBL6\PBL6\obj\Debug\PBL6.pdb
 C:\Users\User\OneDrive\Máy tính\PBL6^\PBL6\PBL6\obj\Debug\PBL6.View.FormDangNhap.resources
+D:\PBL6\PBL6\PBL6\bin\Debug\EntityFramework.dll
+D:\PBL6\PBL6\PBL6\bin\Debug\EntityFramework.SqlServer.dll
+D:\PBL6\PBL6\PBL6\bin\Debug\EntityFramework.xml
+D:\PBL6\PBL6\PBL6\bin\Debug\EntityFramework.SqlServer.xml
+D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.View.FormDangNhap.resources
+D:\PBL6\PBL6\PBL6\obj\Debug\PBL6.csproj.CopyComplete
